@@ -1,4 +1,3 @@
-
 from randombot import randombotfunc
 from greedy import greedyfunc
 from antigreedy import antigreedyfunc
@@ -6,10 +5,8 @@ from themessenger import themessengerfunc
 from rockstar import rockstarfunc
 from assassin import assassinfunc
 from copycat import copycatfunc
-from economist import economistfunc
 from nothungry import nothungryfunc
 from useopponents import useopponentsfunc
-from pattern import patternfunc
 from goodwinning import goodwinningfunc
 from react import reactfunc
 from artsychild import artsychildfunc
@@ -20,6 +17,8 @@ from statistician import *
 from cycler import cyclerfunc
 from swap import *
 from ensemble import *
+from bobw import bobwfunc
+from fitter import fitterfunc
 
 import random
 import numpy
@@ -31,7 +30,7 @@ S = 2
 
 rounds = 1000
 
-functions = [randombotfunc, greedyfunc, antigreedyfunc, themessengerfunc, rockstarfunc, assassinfunc, copycatfunc, economistfunc, nothungryfunc, useopponentsfunc, patternfunc, goodwinningfunc, reactfunc, artsychildfunc, antirepeaterfunc, yggdrasilfunc, weigherfunc, statisticianfunc, cyclerfunc, ensemblefunc] 
+functions = [randombotfunc, greedyfunc, antigreedyfunc, themessengerfunc, rockstarfunc, assassinfunc, copycatfunc, nothungryfunc, useopponentsfunc, goodwinningfunc, reactfunc, artsychildfunc, antirepeaterfunc, yggdrasilfunc, weigherfunc, statisticianfunc, cyclerfunc, swapfunc, ensemblefunc, bobwfunc, fitterfunc] 
 
 players = len(functions) 
 
