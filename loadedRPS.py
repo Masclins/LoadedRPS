@@ -29,6 +29,8 @@ R = 0
 P = 1
 S = 2
 
+rounds = 1000
+
 functions = [randombotfunc, greedyfunc, antigreedyfunc, themessengerfunc, rockstarfunc, assassinfunc, copycatfunc, economistfunc, nothungryfunc, useopponentsfunc, patternfunc, goodwinningfunc, reactfunc, artsychildfunc, antirepeaterfunc, yggdrasilfunc, weigherfunc, statisticianfunc, cyclerfunc, ensemblefunc] 
 
 players = len(functions) 
@@ -93,7 +95,7 @@ for i in range(players):
 	for j in range(i):
 		f2 = functions[j]
 		start_time = time.time()
-		for k in range(1):
+		for k in range(rounds):
 			play(i, j, f1, f2)
 		played += 1
 		print(str(int(j)) + " v. " + str(int(i)) + " took " + str(round(time.time() - start_time, 2)) + " seconds")
