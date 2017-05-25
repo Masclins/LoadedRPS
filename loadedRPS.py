@@ -19,10 +19,12 @@ from swap import *
 from ensemble import *
 from bobw import bobwfunc
 from fitter import fitterfunc
+from blodsocer import blodsocerfunc #not used (out of range)
 
 import random
 import numpy
 import time
+import sys
 
 R = 0
 P = 1
@@ -89,6 +91,11 @@ def play(id1, id2, f1, f2):
 
 invrounds = 2 / (players * (players-1))
 played = 0
+
+elapsed = [0] * players
+
+
+
 for i in range(players):
 	f1 = functions[i]
 	for j in range(i):
@@ -96,18 +103,26 @@ for i in range(players):
 		start_time = time.time()
 		for k in range(rounds):
 			play(i, j, f1, f2)
+
+		end_time = time.time()
+		elapsed[i] += (end_time - start_time)
+		elapsed[j] += (end_time - start_time)
+		
 		played += 1
-		print(str(int(j)) + " v. " + str(int(i)) + " took " + str(round(time.time() - start_time, 2)) + " seconds")
-		print(str(int(played * invrounds*100)) + "% ")
+		sys.stdout.write("\r")
+		p = int(played * invrounds * 100 / 5)
+		sys.stdout.write("[%-20s] %d%%" % ("=" * p, 5 * p)) 		
+sys.stdout.write("\n")
+
 
 f = open("results_grid", "w")
 won = [0] * players
 draw = [0] * players
 for i in range(players):
-	f.write(str(i) + ";")
+	f.write(str(i))
 	for j in range(players):
 		r = results[i][j]
-		f.write(str(int(r[0])) + "," + str(int(r[1])) + ";")
+		f.write(";" + str(int(r[0])) + "," + str(int(r[1])))
 		won[i] += r[0]
 		draw[i] += r[1]
 	f.write("\n")
@@ -116,7 +131,7 @@ f.close()
 f = open("results_standing", "w")
 
 for i in range(players):
-	f.write(str(i) + "," + str(int(won[i])) + "," + str(int(draw[i])) + "\n")
+	f.write(str(i) + "," + str(int(won[i])) + "," + str(int(draw[i])) + "," + str(elapsed[i] / (players-1)) + "\n")
 
 f.close()
 
