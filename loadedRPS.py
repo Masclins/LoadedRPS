@@ -20,7 +20,6 @@ from statistician import *
 from cycler import cyclerfunc
 from swap import *
 from ensemble import *
-#from blodsocer import blodsocerfunc
 
 import random
 import numpy
@@ -32,7 +31,7 @@ S = 2
 
 functions = [randombotfunc, greedyfunc, antigreedyfunc, themessengerfunc, rockstarfunc, assassinfunc, copycatfunc, economistfunc, nothungryfunc, useopponentsfunc, patternfunc, goodwinningfunc, reactfunc, artsychildfunc, antirepeaterfunc, yggdrasilfunc, weigherfunc, statisticianfunc, cyclerfunc, ensemblefunc] 
 
-players = 21
+players = len(functions) 
 
 results = numpy.zeros(shape=(players,players,2))
 
@@ -42,8 +41,8 @@ def play(id1, id2, f1, f2):
 	history1, history2 = "", ""
 
 	for turn in range(100):
-		p1 = f1(id1, points1, points2, loaded1, loaded2, history1, history2)
-		p2 = f2(id2, points2, points1, loaded2, loaded1, history2, history1)
+		p1 = f1(points1, points2, loaded1, loaded2, history1, history2)
+		p2 = f2(points2, points1, loaded2, loaded1, history2, history1)
 
 		history1 += p1
 		history2 += p2
@@ -94,7 +93,7 @@ for i in range(players):
 	for j in range(i):
 		f2 = functions[j]
 		start_time = time.time()
-		for k in range(1000):
+		for k in range(1):
 			play(i, j, f1, f2)
 		played += 1
 		print(str(int(j)) + " v. " + str(int(i)) + " took " + str(round(time.time() - start_time, 2)) + " seconds")
