@@ -19,7 +19,7 @@ from swap import *
 from ensemble import *
 from bobw import bobwfunc
 from fitter import fitterfunc
-from blodsocer import blodsocerfunc #not used (out of range)
+from blodsocer import blodsocerfunc 
 
 import random
 import numpy
@@ -32,7 +32,7 @@ S = 2
 
 rounds = 1000
 
-functions = [randombotfunc, greedyfunc, antigreedyfunc, themessengerfunc, rockstarfunc, assassinfunc, copycatfunc, nothungryfunc, useopponentsfunc, goodwinningfunc, reactfunc, artsychildfunc, antirepeaterfunc, yggdrasilfunc, weigherfunc, statisticianfunc, cyclerfunc, swapfunc, ensemblefunc, bobwfunc, fitterfunc] 
+functions = [randombotfunc, greedyfunc, antigreedyfunc, themessengerfunc, rockstarfunc, assassinfunc, copycatfunc, nothungryfunc, useopponentsfunc, goodwinningfunc, reactfunc, artsychildfunc, antirepeaterfunc, yggdrasilfunc, weigherfunc, statisticianfunc, cyclerfunc, swapfunc, ensemblefunc, bobwfunc, fitterfunc, blodsocerfunc] 
 
 players = len(functions) 
 
