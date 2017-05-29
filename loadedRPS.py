@@ -20,6 +20,9 @@ from ensemble import *
 from bobw import bobwfunc
 from fitter import fitterfunc
 from blodsocer import blodsocerfunc 
+from weightedrandom import weightedrandomfunc
+from antiantigreedy import antiantigreedyfunc
+from somewhathungry import somewhathungryfunc
 
 import random
 import numpy
@@ -32,7 +35,7 @@ S = 2
 
 rounds = 1000
 
-functions = [randombotfunc, greedyfunc, antigreedyfunc, themessengerfunc, rockstarfunc, assassinfunc, copycatfunc, nothungryfunc, useopponentsfunc, goodwinningfunc, reactfunc, artsychildfunc, antirepeaterfunc, yggdrasilfunc, weigherfunc, statisticianfunc, cyclerfunc, swapfunc, ensemblefunc, bobwfunc, fitterfunc, blodsocerfunc] 
+functions = [randombotfunc, greedyfunc, antigreedyfunc, themessengerfunc, rockstarfunc, assassinfunc, copycatfunc, nothungryfunc, useopponentsfunc, goodwinningfunc, reactfunc, artsychildfunc, antirepeaterfunc, yggdrasilfunc, weigherfunc, statisticianfunc, cyclerfunc, swapfunc, ensemblefunc, bobwfunc, fitterfunc, blodsocerfunc, weightedrandomfunc, antiantigreedyfunc, somewhathungryfunc] 
 
 players = len(functions) 
 
@@ -110,8 +113,8 @@ for i in range(players):
 		
 		played += 1
 		sys.stdout.write("\r")
-		p = int(played * invrounds * 100 / 5)
-		sys.stdout.write("[%-20s] %d%%" % ("=" * p, 5 * p)) 		
+		p = played * invrounds
+		sys.stdout.write("[%-20s] %d%%" % ("=" * int(p * 20), int(p * 100))) 		
 sys.stdout.write("\n")
 
 
