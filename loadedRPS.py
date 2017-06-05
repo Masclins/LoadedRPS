@@ -13,7 +13,7 @@ from artsychild import artsychildfunc
 from antirepeater import antirepeaterfunc
 from yggdrasil import yggdrasilfunc
 from weigher import weigherfunc
-from statistician import *
+from statistician2 import *
 from cycler import cyclerfunc
 from swap import *
 from ensemble import *
@@ -23,6 +23,8 @@ from blodsocer import blodsocerfunc
 from weightedrandom import weightedrandomfunc
 from antiantigreedy import antiantigreedyfunc
 from somewhathungry import somewhathungryfunc
+from nash import nashfunc
+from nashbot import nashbotfunc
 
 import random
 import numpy
@@ -35,7 +37,7 @@ S = 2
 
 rounds = 1000
 
-functions = [randombotfunc, greedyfunc, antigreedyfunc, themessengerfunc, rockstarfunc, assassinfunc, copycatfunc, nothungryfunc, useopponentsfunc, goodwinningfunc, reactfunc, artsychildfunc, antirepeaterfunc, yggdrasilfunc, weigherfunc, statisticianfunc, cyclerfunc, swapfunc, ensemblefunc, bobwfunc, fitterfunc, blodsocerfunc, weightedrandomfunc, antiantigreedyfunc, somewhathungryfunc] 
+functions = [randombotfunc, greedyfunc, antigreedyfunc, themessengerfunc, rockstarfunc, assassinfunc, copycatfunc, nothungryfunc, useopponentsfunc, goodwinningfunc, reactfunc, artsychildfunc, antirepeaterfunc, yggdrasilfunc, weigherfunc, statistician2func, cyclerfunc, swapfunc, ensemblefunc, bobwfunc, fitterfunc, blodsocerfunc, weightedrandomfunc, antiantigreedyfunc, somewhathungryfunc, nashfunc, nashbotfunc] 
 
 players = len(functions) 
 
